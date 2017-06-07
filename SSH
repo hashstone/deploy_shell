@@ -1,0 +1,19 @@
+#!/usr/bin/expect -f
+
+set timeout 5
+
+set user "admin"
+set host [lindex $argv 0]
+set passwd "88stIVA#2017"
+
+spawn ssh $user@$host
+
+expect {
+    "Connection refused" exit
+    "Name or service not known" exit
+    "continue connecting" {send "yes\r"; exp_continue}
+    "password:" {send "$passwd\r";}
+}
+
+interact
+exit
