@@ -4,7 +4,7 @@ set timeout 5
 
 set user "admin"
 set host [lindex $argv 0]
-set passwd "88stIVA#2017"
+set passwd "abcd"
 
 spawn ssh $user@$host
 
